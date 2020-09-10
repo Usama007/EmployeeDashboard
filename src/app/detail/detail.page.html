@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>
+        <strong>Designation: </strong>{{designation}}
+      </p>
+      <p>
+        <strong>Email: </strong> {{email}}</p>
+      <p>
+        <strong>Address: </strong>{{address}} </p>
+      <p>
+        <strong>Date of Birth: </strong>{{dob}}
+      </p>
+    </ion-card-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="secondary" routerLink="/form/{{empId}}">Edit</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="delete()">Delete Employee</ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+</ion-content>

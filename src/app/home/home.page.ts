@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  employees: any = [];
+  constructor(private storage: Storage) { }
+  ngOnInit() {
 
-  constructor() {}
+  }
+
+  ionViewDidEnter() {
+    this.storage.get('emp_data').then((val) => {
+      this.employees = val;
+      // console.log(this.employees);
+    });
+  }
 
 }
